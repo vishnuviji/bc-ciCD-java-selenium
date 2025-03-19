@@ -43,7 +43,7 @@ jobs:
         name: test-result
         path: target/reports
         
-    - name: Deploy to GitHub Pages #To deploy the reports page in github pages
+    - name: Deploy to GitHub Pages #To deploy the reports page in github pages (here give write permision in settings -- general-- give permission to read and write)
       if: sucess()
       uses: peaceiris/upload-gh-pages@v4
       with:
