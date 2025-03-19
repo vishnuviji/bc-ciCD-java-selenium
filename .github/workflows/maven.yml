@@ -45,7 +45,7 @@ jobs:
         
     - name: Deploy to GitHub Pages #To deploy the reports page in github pages (here give write permision in settings -- general-- give permission to read and write)
       if: success()
-      uses: peaceiris/upload-gh-pages@v4
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: target/reports #path of the report page
