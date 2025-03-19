@@ -10,7 +10,7 @@
 #Workflow Name of project here
 name: Selenium Java Tests
 
-#Triggers here -- eg when to execute the yaml file
+#Triggers here -- eg when to execute the yaml file.
 on:
   push:
     branches: [ "main", "master" ]
