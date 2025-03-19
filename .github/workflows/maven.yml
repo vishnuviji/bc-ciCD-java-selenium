@@ -36,11 +36,18 @@ jobs:
     - name: Run the test # now we are going to execute the test
       run: mvn clean test
       
-    - name: upload reports #To upload the reports in reports folder
+    - name: Upload reports #To upload the reports in reports folder
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: test-result
         path: target/reports
+        
+    - name: Deploy to GitHub Pages #To deploy the reports page in github pages
+      if: sucess()
+      uses: peaceiris/upload-gh-pages@v4
+      with:
+        github_token: ${{secrets.GITHUB_TOKEN}}
+        publish_dir: target/reports #path of the report page
 
   
