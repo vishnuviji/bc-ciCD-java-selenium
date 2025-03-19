@@ -44,7 +44,7 @@ jobs:
         path: target/reports
         
     - name: Deploy to GitHub Pages #To deploy the reports page in github pages (here give write permision in settings -- general-- give permission to read and write)
-      if: success()
+      if: always() #instead of always we can use if success -- if i want to exectue only during success
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
