@@ -32,7 +32,15 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+        
     - name: Run the test # now we are going to execute the test
       run: mvn clean test
+      
+    - name: upload reports #To upload the reports in reports folder
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-result
+        path: target/reports
 
   
